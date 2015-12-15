@@ -32,6 +32,7 @@ COPY conf/jenkins/jenkins.model.JenkinsLocationConfiguration.xml "${JENKINS_STAG
 COPY conf/jenkins/nodeMonitors.xml "${JENKINS_STAGING}/nodeMonitors.xml"
 COPY conf/tomcat/server.xml "${CATALINA_HOME}/conf/server.xml"
 COPY conf/tomcat/Catalina/localhost/rewrite.config "${CATALINA_HOME}/conf/Catalina/localhost/rewrite.config"
+COPY conf/tomcat/RewriteMap/target/RewriteMap-1.0-SNAPSHOT.jar "${CATALINA_HOME}/lib/RewriteMap-1.0-SNAPSHOT.jar"
 
 RUN apt-get update
 RUN apt-get install -y git python zip
