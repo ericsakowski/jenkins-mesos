@@ -96,11 +96,11 @@ def main():
         jenkins_app_context = os.environ['JENKINS_CONTEXT']
         marathon_host = os.environ['HOST']
         marathon_port = os.environ['PORT0']
-    except KeyError:
+    except KeyError, ke:
         # Since each of the environment variables above are set either in the
         # DCOS marathon.json or by Marathon itself, the user should never get
         # to this point.
-        print("ERROR: missing one or more required environment variables.")
+        print("ERROR: missing one or more required environment variables. %s" % str(ke))
         return 1
 
     # If this is the first run of the script, make changes to the staging
